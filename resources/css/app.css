@@ -1,3 +1,17 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer components {
+    .post-content > p {
+        @apply mt-3;
+    }
+
+    .post-content > p:first-child {
+        @apply mt-0;
+    }
+
+    .post-content > blockquote {
+        @apply mt-3 border-l-4 border-blue-300 pl-3;
+    }
+}

@@ -782,6 +782,22 @@ select {
   }
 }
 
+.post-content > p {
+  margin-top: 0.75rem;
+}
+
+.post-content > p:first-child {
+  margin-top: 0px;
+}
+
+.post-content > blockquote {
+  --tw-border-opacity: 1;
+  border-color: rgba(147, 197, 253, var(--tw-border-opacity));
+  border-left-width: 4px;
+  margin-top: 0.75rem;
+  padding-left: 0.75rem;
+}
+
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
