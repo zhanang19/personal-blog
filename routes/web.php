@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = Post::published()->paginate(6);
+
+    return view('homepage', compact('posts'));
 });
+
+Route::get('/blog/{post:slug}', function (Post $post) {
+    abort_unless($post->is_published, 404);
+
+    return view('post', compact('post'));
+})->name('blog.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
